@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antaira</title>
+    <link rel="stylesheet" href="./CSS/service.css">
+    <link rel="icon" type="image/png" href="img/android-chrome-512x512.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header class="page-header wrapper">
+        <h1><img class="logo" src="./img/antaira-logo.png" alt="antaira-logo"></h1>
+        <div class="info">
+            <p>Firmware:
+             <a href="#" onclick="window.open('https://www.antaira.com/', 'googleapis', config='height=500,width=500');">Antaira r49432 (07/07/22)</a>
+             <br>
+             Time: 23:11:08 up 6 days, 4:32, load average: 0.06, 0.01, 0.00
+             <br>
+             WAN IP: 0.0.0.0
+            </p>
+        </div>
+    </header>
+    <header class="sec-header wrapper">
+        <div class="topNav">
+            <div>
+                <a href="#" class="showmenu">
+                    <span class="material-symbols-outlined">
+                        menu
+                    </span>
+                </a>
+            </div>
+            <img class="logo" src="./img/antaira-logo.png" alt="antaira-logo">
+            <span class="material-symbols-outlined" id="infoIcon">
+                info
+            </span>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="./index.html">Setup</a></li>
+            <li><a href="./Wireless.html">Wireless</a></li>
+            <li><a href="./Services.html" class="Setup">Services</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Access Restrictions</a></li>
+            <li><a href="#">Port Forwarding</a></li>
+            <li><a href="#">Administration</a></li>
+            <li><a href="./Status.html">Status</a></li>
+        </ul>
+    </nav>
+    <nav class="second-nav">
+        <ul>
+            <li><a href="#" class="choose">Services</a></li>
+            <li><a href="#">FreeRADIUS</a></li>
+            <li><a href="#">PPPoE Server</a></li>
+            <li><a href="#">VPN</a></li>
+            <li><a href="#">USB</a></li>
+            <li><a href="#">NAS</a></li>
+            <li><a href="#">Hotspot</a></li>
+            <li><a href="#">Ad Blocking</a></li>
+        </ul>
+    </nav>
+    <div class="wanSetup">
+        <article>
+            <header>
+                <h1 class="wanTypeTitle">Services Management</h1>
+            </header>
+            <div class="wanType">
+                <p class="wanTypeInfo">DHCP Client</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="normalInp">
+                            <p>DHCP Vendor Class</p>
+                            <input type="text" class="secInp"/>
+                        </div>
+                        <div class="DNS">
+                            <p>Request IP</p>
+                            <input type="text" class="secInp"/>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">DHCP Server Setup</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                            <div class="normalInp">
+                                <p>Use JFFS2 for Client Lease DB</p>
+                            </div>
+                            <div class="normalInp">
+                                <p>Use NVRAM for Client Lease DB</p>
+                                <div class="box1">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                            <div class="normalSelect">
+                                <p>Used Domain</p>
+                                <select>
+                                <option>WAN</option>
+                                <option>LAN & WLAN</option>
+                                </select>
+                            </div>  
+                            <div class="normalInp">
+                                <p>LAN Domain</p>
+                                <input type="text" class="secInp"/>
+                            </div>
+                            <div class="normalInp">
+                                <p>Additional Options</p>
+                            </div>
+                            <textarea></textarea>
+                            <h1 class="middleTitle">Static Leases</h1>
+                            <div class="smlleTitle">
+                                <li>MAC Address</li>
+                                <li>Hostname</li>
+                                <li>IP Address</li>
+                                <li>Lease Expiration</li>
+                                <li>Action</li>
+                            </div>
+                            <div class="smlleInp">
+                                <input type="text"/>
+                                <input type="text"/>
+                                <input type="text"/>
+                                <input type="text"/>
+                                <div class="wrapper">
+                                    <a href="#" class="close-button">
+                                      <div class="in">
+                                        <div class="close-button-block"></div>
+                                        <div class="close-button-block"></div>
+                                      </div>
+                                      <div class="out">
+                                        <div class="close-button-block"></div>
+                                        <div class="close-button-block"></div>
+                                      </div>
+                                    </a>
+                                  </div>
+                                <button class="deletebutton" style="vertical-align:middle" ><span>delete</span></button>
+                            </div>
+                            <div class="btnBox">
+                                <button class="smallbutton" style="vertical-align:middle" ><span>Add</span></button>
+                            </div>
+                    </div>  
+                </div>
+            </div>
+            <header>
+                <h1 class="wanTypeTitle">Dnsmasq Infrastructure</h1>
+            </header>
+            <div class="wanType">
+                <p class="wanTypeInfo">Router IP</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                       <div class="radioBox">
+                        <div class="radio1">
+                            <label>Enable dnsmasq</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="01" checked>Enable</label>
+                                <label><input type="radio" name="01">Disabled</label>
+                            </div>
+                        </div>
+                        <div class="radio1">
+                            <label>Cache DNSSEC Data</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="02" checked>Enable</label>
+                                <label><input type="radio" name="02">Disabled</label>
+                            </div>
+                        </div>
+                        <div class="radio1">
+                            <label>Validate DNS Replies (DNSSEC)</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="03" checked>Enable</label>
+                                <label><input type="radio" name="03">Disabled</label>
+                            </div>
+                        </div>
+                        <div class="radio1">
+                            <label>Check Unsigned DNS Replies</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="04" checked>Enable</label>
+                                <label><input type="radio" name="04">Disabled</label>
+                            </div>
+                        </div>
+                        <div class="radio1">
+                            <label>No DNS Rebind</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="05" checked>Enable</label>
+                                <label><input type="radio" name="05">Disabled</label>
+                            </div>
+                        </div>
+                        <div class="radio1">
+                            <label>Query DNS in Strict Order</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="06" checked>Enable</label>
+                                <label><input type="radio" name="06">Disabled</label>
+                            </div>
+                        </div>
+                        <div class="radio1">
+                            <label>Add Requestor MAC to DNS Query</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="07" checked>Enable</label>
+                                <label><input type="radio" name="07">Disabled</label>
+                            </div>
+                        </div>
+                        <div class="radio1">
+                            <label>RFC4039 Rapid Commit Support</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="08" checked>Enable</label>
+                                <label><input type="radio" name="08">Disabled</label>
+                            </div>
+                        </div>
+                       </div>
+                        <div class="normalInp">
+                                <p>GMaximum Cached Entries</p>
+                                <input type="text" class="secInp"/>
+                        </div>
+                        <div class="normalInp">
+                                <p>Additional Options</p>
+                        </div>
+                        <textarea></textarea>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo DHCP1">Hardware Monitoring</p>
+                <div class="wanTypeP DHCP2">
+                    <div class="normalInp">
+                        <p>High Temperature (FAN On)</p>
+                        <input type="text" class="secInp"/>
+                    </div>
+                    <div class="DNS">
+                        <p>Normal Temperature (FAN Off)</p>
+                        <input type="text" class="secInp"/>
+                    </div>
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">Lighttpd Web Server</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>Enable Server</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="09" checked>Enable</label>
+                                <label><input type="radio" name="09">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">Mikrotik MAC Telnet</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>MAC Telnet</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="10" checked>Enable</label>
+                                <label><input type="radio" name="10">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">IP over DNS Tunneling</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>NSTX Daemon</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="11" checked>Enable</label>
+                                <label><input type="radio" name="11">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">PPPoE Relay</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>Enable Relay</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="12" checked>Enable</label>
+                                <label><input type="radio" name="12">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">SES / AOSS / EZ-SETUP / WPS Button</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>Turn Off Radio</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="13" checked>Enable</label>
+                                <label><input type="radio" name="13">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">Simple Network Management Protocol (SNMP)</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>Enable SNMP</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="14" checked>Enable</label>
+                                <label><input type="radio" name="14">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">Secure Shell</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>SSHd</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="15" checked>Enable</label>
+                                <label><input type="radio" name="15">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">System Log</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>Syslogd</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="16" checked>Enable</label>
+                                <label><input type="radio" name="16">Disabled</label>
+                            </div>
+                        </div>
+                        <div class="DNS">
+                            <p>Remote Server</p>
+                            <input type="text" class="secInp"/>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">Telnet</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>Enable Server</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="17" checked>Enable</label>
+                                <label><input type="radio" name="17">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">The Onion Router Project</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>Enable Tor</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="18" checked>Enable</label>
+                                <label><input type="radio" name="18">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">WAN Traffic Counter</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>ttraff Daemon</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="19" checked>Enable</label>
+                                <label><input type="radio" name="19">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">Virtual Network Computing (VNC)</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>Enable Repeater</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="20" checked>Enable</label>
+                                <label><input type="radio" name="20">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wanType">
+                <p class="wanTypeInfo">Zabbix</p>
+                <div class="wanTypeP">
+                    <div class="Connection-Type2">
+                        <div class="enableClient">
+                            <label>Enable Client</label>
+                            <div class="Shortcut1">
+                                <label><input type="radio" name="21" checked>Enable</label>
+                                <label><input type="radio" name="21">Disabled</label>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </article>
+        <aside>
+            <h2 class="sub-title">Help<a href="#">more...</a></h2>
+            <div class="asideAll">
+                <h3>JFFS2 Support Requirements:</h3>
+                <p>Before enabling storage for Client Lease DB into JFFS2 flash storage, JFFS2 support must be enabled. JFFS2 Support is located on the Administration / Management tab.</p>
+            </div>
+        </aside>
+    </div>
+    <div class="btnBox">
+        <button class="button" style="vertical-align:middle" ><span>Save</span></button>
+        <button class="button1" style="vertical-align:middle"><span>Apply Settings</span></button>
+        <button class="button2"> Cancel Changes</button>
+        <button class="button3" style="vertical-align:middle" ><span>Reboot Router</span></button>
+    </div>
+</body>
+<footer>
+    <div>
+        <p>&copy;2022 Antairain. LTD. ALL RIGHTS RESERVED</p>
+    </div>
+</footer>
+</html>

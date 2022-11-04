@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@mixin li-style {
+    display: inline-block;
+    font: { 
+        size: 16px;
+        weight: $roboto-b7;
+    }
+    padding: 10px 16px 10px 16px;
+}
+@mixin btn-style {
+    border: none;
+    color: $bg-wt;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    height: 46px;
+    width: 145px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+@mixin btn-style1 {
+    transition: all 0.5s;
+    margin: 5px;
+    &:hover span{
+        padding-right: 25px;
+        &::after{
+        opacity: 1;
+        right: 0;
+        }
+    }
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+        &::after{
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+      }
+}
+@mixin btn-style2 {
+    text-decoration: none;
+    transition-duration: 0.4s;
+    margin-top: 4px;
+    background-color: $bg-wt;
+    color: $bg-bl;
+    border: 1.5px solid $btn-gray;
+}
+@mixin nav-shape {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 20px;
+    background: transparent;
+    top: 39px;
+}
+$bg-red:#d92128;
+$bg-bl:#231f1f;
+$bg-wt:#FFFFFF;
+$btn-green:#4CAF50;
+$btn-gray:#a1a1a1;
+$roboto-r4:400;
+$roboto-m5:500;
+$roboto-b7:700;
+
+*{
+    font: {
+        family: 'Roboto', sans-serif;
+        style: normal;
+    }
+    letter-spacing: -0.02em;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    img{
+        max-width: 100%;
+    }
+    .logo{
+        width: 150px;
+        margin-top: 15px;
+    }
+}
+
+article{
+    width: 74%;
+}
+
+aside{
+    width: 20%;
+    margin-right: 2.5%;
+    .asideAll{
+        margin: 25px 10px;
+    }
+    h3{
+        font: {
+            weight: $roboto-m5;
+            size: 14px;
+        }
+        line-height: 21px;
+        padding: 10px 0 0 0;
+    }
+    p{
+        font: {
+            weight: $roboto-r4;
+            size: 12px;
+        }
+        line-height: 18px;
+        width: 100%;
+        padding: 0 0 13px 0;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.4);;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    &:hover{
+        color:$bg-wt;
+        text-shadow: 0 0 0.4em $bg-wt, 0 0 0.7em $bg-wt ;
+    }
+}
+
+.page-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: $bg-bl;
+    margin: 0 auto;
+    padding: 0 80px ;
+    .info , .info a{
+        font-size: 12px;
+        margin-top: 20px;
+        line-height: 16px;
+        color: $bg-wt;
+    }
+}
+
+.main-nav{
+    background-color: $bg-bl;
+    display: flex;
+    padding-left: 3% ;
+    ul{
+        margin: 10px 0 0 0;
+    }
+    li{
+        @include li-style;
+    }
+}
+
+.second-nav{
+    display: flex;
+    padding-left: 3% ;
+    background : $bg-red;
+    ul{
+        margin: 0;
+        z-index: 1;
+    }
+    li{
+        @include li-style
+    }
+    .choose{
+        color: $bg-wt;
+    }
+    
+}
+
+.Setup
+{
+    background-color: $bg-red;
+    padding: 30px 20px 18px 20px;
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    color: $bg-wt;
+    &::before{
+        left: -20px;
+        box-shadow: 7.5px 7.5px 0 7.5px $bg-red;
+        border-bottom-right-radius: 20px;
+        @include nav-shape;
+    }
+    &::after{
+        right: -20px;
+        box-shadow: -7.5px 7.5px 0px 7.5px $bg-red;
+        border-bottom-left-radius: 20px;
+        @include nav-shape;
+    }
+}
+
+.wanSetup{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    .wanTypeTitle{
+        margin-left: 8%;
+    }
+    .wanType{
+        margin-top: 40px;
+        border: 1px solid $bg-bl;
+        box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        margin-left: 8%;
+        .wanTypeInfo{
+            margin-left: 4%;
+            position: absolute;
+            background-color: $bg-wt;
+            padding: 10px;
+            margin-top: -22px;
+            color:$bg-red;
+            font: {
+                weight: $roboto-m5;
+                size: 16px;
+            }
+        }
+        .wanTypeP{
+            margin: 15px 0 0 8.5%;
+            font: {
+                weight: $roboto-r4;
+                size: 14px;
+            }
+            select , input{
+                border: 1px solid $bg-bl;
+                border-radius: 4px;
+                outline:none;
+                &:focus {border: 1.5px solid $bg-red;}
+            }
+            .Connection-Type{
+                margin-bottom: 15px;
+                select{
+                    height: 30px;
+                }
+            }
+            .normalSelect{
+                display: flex;
+                justify-content: space-between;
+                select{
+                    width: 43.5%;
+                    height: 30px;
+                    margin-right: 6%;
+                }
+            }
+            .DNS ,.WINS ,.DHCP{
+                margin-bottom: 10px;
+            }
+            .check1 {
+                margin-bottom: 25px;
+            }
+            .radio1{
+                margin: 15px 0 30px 0;
+            }
+            .enableClient{
+                margin: 30px 0 20px 0;
+            }
+            .secInp{
+                height: 30px;
+            }
+        }
+    }
+}
+
+.MTU select{
+    margin-right: 5%;
+    width: 43.5%;
+    height: 30px;
+}
+
+.secInp2{
+    width: 50%;
+    height: 30px;
+}
+
+.wanTypeTitle , .sub-title{
+    font-weight: $roboto-m5;
+    font-size: 16px;
+    color: $bg-wt;
+    background: $bg-red;
+    border-radius: 10px;
+    padding: 8px 20px;
+}
+
+input[type='radio'],
+input[type='checkbox']{
+    accent-color:$bg-bl;
+    border: 3px solid $bg-wt;
+}
+
+.box1 , .Shortcut1 ,.mtu1 ,.secInp ,.Connection-Type select{
+    margin-right: 6%;
+    width: 43.5%;
+    align-self: center;
+}
+
+.sub-title ,.Connection-Type , .normalInp,.MTU ,.mtu1 ,.DNS,.WINS ,.DHCP ,.check1 ,.radio1 ,.enableClient{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer{
+    background-color: $bg-bl;
+    text-align: center;
+    color: $bg-wt;
+    padding: 1px;
+    margin-top: 40px;
+    font: { 
+        size: 8px;
+        weight: $roboto-r4;
+    }
+}
+
+.btnBox{
+    display: block;
+    justify-content: center;
+    text-align: center;
+    .button {
+        background-color: $bg-red;
+        @include btn-style;
+        @include btn-style1;
+    }
+    .button1 {
+        background-color: $btn-green;
+        @include btn-style;
+        @include btn-style1;
+    }
+    .button2 {
+        @include btn-style;
+        @include btn-style2;
+        &:hover {
+            background-color: $btn-gray;
+            color: $bg-wt;
+        }
+    }
+}
+
+.sec-header{
+    background-color: $bg-bl;
+    color: $bg-wt;
+    padding: 0 0 10px 0px;
+    img{
+        height: 24px;
+        width: auto;
+      }
+    .topNav{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 0 8% 0 8%;
+    }
+  }
+
+ @media (min-width: 1200px){
+    .sec-header ,.mobile-menu{
+        display: none;
+    }
+  }
+ @media (max-width: 1200px){
+    .Setup{
+        padding: 0;
+        & ::before , & ::after{
+            box-shadow: none;
+        }
+    }
+    
+    .main-nav ,.second-nav ,.page-header{
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    #infoIcon{
+        opacity: 0;
+    }
+
+  }
+  @media (max-width: 992px){
+    #infoIcon{
+        opacity: 100;
+    }
+
+    aside{
+        display: none;
+    }
+
+    article{
+        width: 100%;
+        margin-right: 8%;
+    }
+  }
+  @media (max-width: 805px){
+    .check1 label{
+        width: 40%;
+        word-wrap:break-word;
+    }
+  }
+  @media (max-width: 600px){
+    .sub-title ,.Connection-Type , .normalInp,.MTU ,.mtu1 ,.DNS,.WINS ,.DHCP ,.check1 ,.radio1 ,.enableClient{
+        display: block;
+        justify-content: left;
+    }
+
+    .secInp ,.Connection-Type select ,.mtu1{
+        width: 92%;
+    }
+    .Shortcut1 label{
+        display: block;
+        margin-top: 8%;
+    }
+    .secInp2 ,.mtu1 select{
+        width: 100%;
+        margin-bottom: 3%;
+    }
+    .Connection-Type select{
+        margin-bottom: 3%;
+    }
+    .DHCP1{
+        width: 70%;
+    }
+    .DHCP2{
+        padding-top: 3%;
+    }
+  }
+  @media (max-width: 375px){
+    .DHCP2{
+        padding-top: 15%;
+    }
+  }
